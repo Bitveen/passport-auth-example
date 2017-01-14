@@ -1,0 +1,7 @@
+extends layout.pug
+
+block content
+    div(class='page-header')
+        -if (user)
+            h3 Добро пожаловать, #{user.name}
+            a(href='/logout') Выйти

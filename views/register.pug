@@ -1,0 +1,22 @@
+extends layout.pug
+
+block content
+    div(class='page-header')
+        h3 Регистрация
+    form(action='/register', method='POST')
+        div(class='form-group')
+            label Логин
+            input(type='text', class='form-control', name='login')
+        div(class='form-group')
+            label Пароль
+            input(type='password', class='form-control', name='password')
+        div(class='form-group')
+            label Ваше имя
+            input(type='text', class='form-control', name='name')
+        div(class='form-group')
+            label Ваш возраст
+            input(type='text', class='form-control', name='age')
+        button(type='submit', class='btn btn-primary') Зарегистрироваться
+    -if (messages.error)
+        div(class='alert alert-warning')
+            span=messages.error
